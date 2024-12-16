@@ -125,7 +125,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_86ek2")
 theme_override_styles/normal = ExtResource("3_2oc3i")
 text = "Try again"
 
-[node name="QuitButton" type="Button" parent="Control"]
+[node name="MenuButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -145,9 +145,9 @@ theme_override_styles/hover_pressed = ExtResource("3_2oc3i")
 theme_override_styles/hover = SubResource("StyleBoxFlat_o3iiw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3un74")
 theme_override_styles/normal = ExtResource("3_2oc3i")
-text = "Quit"
+text = "Menu"
 
 [connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_try_again_button_pressed"]
-[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_2_pressed"]
-[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/MenuButton" to="." method="_on_quit_button_2_pressed"]
+[connection signal="pressed" from="Control/MenuButton" to="." method="_on_menu_button_pressed"]

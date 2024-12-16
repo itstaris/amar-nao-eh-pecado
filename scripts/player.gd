@@ -8,10 +8,6 @@ var caixa_limite : bool = true
 @onready var collision = $CollisionShape2D_0
 @onready var area2d = $Area2D_0
 
-func _ready():
-	pass
-
-
 func _process(delta: float) -> void:
 	mouse_pos = get_global_mouse_position()
 	global_position = mouse_pos
@@ -42,7 +38,7 @@ func _on_area_2d_area_entered(area):
 			elif caixas_seguradas == 5:
 				anim.play("5_caixa")
 				caixa_limite = false
-	if area.is_in_group("kombi"):
+	if area.is_in_group("kombi"): #bagulho pra descarregar as caixas
 		Global.score += caixas_seguradas
 		await get_tree().create_timer(0.1).timeout
 		caixas_seguradas = 0
