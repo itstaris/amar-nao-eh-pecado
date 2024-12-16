@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpxbtjyfo5axb"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_0t5fh"]
+[ext_resource type="PackedScene" uid="uid://ci47xnkr8nut4" path="res://scenes/player.tscn" id="1_q5mwn"]
+[ext_resource type="PackedScene" uid="uid://kpipo3jvwqsq" path="res://scenes/box.tscn" id="2_63qw4"]
+[ext_resource type="Script" path="res://scripts/score_manager.gd" id="4_vatne"]
+[ext_resource type="PackedScene" uid="uid://cg6sdm1kwud5o" path="res://scenes/kombi.tscn" id="5_ciej0"]
+[ext_resource type="PackedScene" uid="uid://5p60yd2p8fye" path="res://scenes/chao.tscn" id="6_kuh63"]
+[ext_resource type="AudioStream" uid="uid://itte6ihkam5h" path="res://sounds/Screen_Recording_20241216_170849_YouTube.mp3" id="7_nwknv"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_0t5fh")
+box_scene = ExtResource("2_63qw4")
+
+[node name="player" parent="." instance=ExtResource("1_q5mwn")]
+position = Vector2(543, 493)
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_vatne")
+
+[node name="score_label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 155.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 36
+text = "Score: "
+
+[node name="score_counter" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 40.0
+offset_right = 270.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 36
+text = "0000"
+
+[node name="life_counter" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 40.0
+offset_right = 1147.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 36
+text = "x 3"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="kombi" parent="." instance=ExtResource("5_ciej0")]
+position = Vector2(1301, 478)
+
+[node name="chao" parent="." instance=ExtResource("6_kuh63")]
+position = Vector2(600, 795)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nwknv")
+volume_db = -4.0
+autoplay = true
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

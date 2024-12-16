@@ -1,0 +1,153 @@
+[gd_scene load_steps=8 format=3 uid="uid://du205tcwcttfr"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vnw8g"]
+[ext_resource type="Theme" uid="uid://djjyjcwvpshfp" path="res://font_themes/new_theme.tres" id="2_1lucm"]
+[ext_resource type="StyleBox" uid="uid://q3uws5kh1p40" path="res://font_themes/new_style_box_flat.tres" id="3_2oc3i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj0ls"]
+bg_color = Color(0.57375, 0.535901, 0.90602, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86ek2"]
+bg_color = Color(0.206623, 0.152761, 0.435077, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3iiw"]
+bg_color = Color(0.57375, 0.535901, 0.90602, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3un74"]
+bg_color = Color(0.206623, 0.152761, 0.435077, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_vnw8g")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_top = 110.0
+offset_right = 144.0
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = ":("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_top = 227.0
+offset_right = 144.0
+offset_bottom = 290.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = "Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_top = 314.0
+offset_right = 144.0
+offset_bottom = 377.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = "High Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -15.0
+offset_right = 159.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1lucm")
+theme_override_styles/focus = ExtResource("3_2oc3i")
+theme_override_styles/disabled_mirrored = ExtResource("3_2oc3i")
+theme_override_styles/disabled = ExtResource("3_2oc3i")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_2oc3i")
+theme_override_styles/hover_pressed = ExtResource("3_2oc3i")
+theme_override_styles/hover_mirrored = ExtResource("3_2oc3i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yj0ls")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_86ek2")
+theme_override_styles/normal = ExtResource("3_2oc3i")
+text = "Try again"
+
+[node name="QuitButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -291.0
+offset_right = 81.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_1lucm")
+theme_override_styles/focus = ExtResource("3_2oc3i")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_2oc3i")
+theme_override_styles/hover_pressed = ExtResource("3_2oc3i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o3iiw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3un74")
+theme_override_styles/normal = ExtResource("3_2oc3i")
+text = "Quit"
+
+[connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_2_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
