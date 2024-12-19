@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://kpipo3jvwqsq"]
 
-[ext_resource type="Texture2D" uid="uid://cteltpaiopbh8" path="res://assets/icon.svg" id="1_vxlkb"]
+[ext_resource type="Texture2D" uid="uid://dvg0s1w5t887j" path="res://assets/boxv2.png" id="1_s1hm5"]
 [ext_resource type="Script" path="res://scripts/area_2d.gd" id="2_pis7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ia8o"]
-size = Vector2(128, 121)
+size = Vector2(128, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egvfp"]
 size = Vector2(99, 13)
@@ -12,10 +12,11 @@ size = Vector2(99, 13)
 [node name="box" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_vxlkb")
+scale = Vector2(4, 4)
+texture = ExtResource("1_s1hm5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_3ia8o")
 
 [node name="Area2D" type="Area2D" parent="." groups=["base"]]

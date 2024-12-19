@@ -36,7 +36,7 @@ script = ExtResource("1_gdvei")
 position = Vector2(0, 64)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_2loqo")
-animation = &"Idle"
+animation = &"1_caixa"
 offset = Vector2(0, -24)
 
 [node name="Area2D_0" type="Area2D" parent="." groups=["player"]]
