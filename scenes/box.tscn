@@ -12,6 +12,7 @@ size = Vector2(99, 13)
 [node name="box" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("1_s1hm5")
 

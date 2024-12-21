@@ -25,6 +25,6 @@ func _on_start_timer_timeout() -> void:
 func caixa_spawn(): #função que faz cuspir as caixas
 	while true:
 		var box = box_scene.instantiate()
-		box.position = Vector2(randf_range(20, 1180), -40) #mudar isso depois
+		box.position = Vector2(randf_range(32, 1000), -40) #mudar isso depois
 		add_child(box)
 		await get_tree().create_timer(tempo).timeout
