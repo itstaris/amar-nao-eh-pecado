@@ -33,7 +33,9 @@ func adjust_time():
 		tempo = 1.5
 	if Global.score >= 10:
 		tempo = 1.0
-	if Global.score >= 15:
+	if Global.score >= 25:
+		tempo = 0.7
+	if Global.score >= 40:
 		tempo = 0.5
-	if Global.score >= 20:
+	if Global.score >= 65:
 		tempo = 0.3

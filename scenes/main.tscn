@@ -71,6 +71,20 @@ text = "x 3"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="instruction" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 192.0
+offset_right = 1105.0
+offset_bottom = 291.0
+theme_override_fonts/font = ExtResource("7_8nhbx")
+theme_override_font_sizes/font_size = 31
+text = "
+Don't let the boxes fall!
+(You can only hold 5 at a time)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Heart" type="Sprite2D" parent="CanvasLayer/Control"]
 texture_filter = 1
 position = Vector2(1021, 69)
@@ -78,7 +92,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("8_kns1o")
 
 [node name="kombi" parent="." instance=ExtResource("5_ciej0")]
-position = Vector2(1200, 600)
+position = Vector2(1152, 592)
 scale = Vector2(2, 2)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

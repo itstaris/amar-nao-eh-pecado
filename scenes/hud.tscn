@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://xviax3ywtwg3"]
+[gd_scene load_steps=10 format=3 uid="uid://xviax3ywtwg3"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_248bq"]
 [ext_resource type="Theme" uid="uid://djjyjcwvpshfp" path="res://font_themes/new_theme.tres" id="1_fhvkr"]
 [ext_resource type="StyleBox" uid="uid://q3uws5kh1p40" path="res://font_themes/new_style_box_flat.tres" id="2_dcdud"]
+[ext_resource type="Texture2D" uid="uid://5gjm5t26e210" path="res://assets/menu.png" id="2_juvqo"]
 [ext_resource type="FontFile" uid="uid://dvgphr601eq8k" path="res://assets/PressStart2P.ttf" id="2_vgn8f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj0ls"]
@@ -48,6 +49,11 @@ expand_margin_right = 50.0
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_248bq")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(600, 450)
+texture = ExtResource("2_juvqo")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -56,22 +62,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleLabel" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -144.0
-offset_top = 273.0
-offset_right = 144.0
-offset_bottom = 336.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_vgn8f")
-theme_override_font_sizes/font_size = 60
-text = "Amar não é pecado"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="StartButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -79,15 +69,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -50.0
-offset_right = 200.0
-offset_bottom = 50.0
+offset_left = -63.0
+offset_top = 181.0
+offset_right = 337.0
+offset_bottom = 281.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_fhvkr")
 theme_override_fonts/font = ExtResource("2_vgn8f")
-theme_override_font_sizes/font_size = 0
 theme_override_styles/focus = ExtResource("2_dcdud")
 theme_override_styles/disabled_mirrored = ExtResource("2_dcdud")
 theme_override_styles/disabled = ExtResource("2_dcdud")
@@ -101,17 +90,17 @@ text = "Play"
 
 [node name="QuitButton2" type="Button" parent="Control"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -158.0
-offset_top = -370.0
-offset_right = 142.0
-offset_bottom = -270.0
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = 307.0
+offset_right = 500.0
+offset_bottom = 407.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme = ExtResource("1_fhvkr")
 theme_override_fonts/font = ExtResource("2_vgn8f")
 theme_override_styles/focus = ExtResource("2_dcdud")
