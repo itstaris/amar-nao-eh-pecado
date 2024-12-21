@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpxbtjyfo5axb"]
+[gd_scene load_steps=11 format=3 uid="uid://dpxbtjyfo5axb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_0t5fh"]
 [ext_resource type="PackedScene" uid="uid://ci47xnkr8nut4" path="res://scenes/player.tscn" id="1_q5mwn"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" path="res://scripts/score_manager.gd" id="4_vatne"]
 [ext_resource type="PackedScene" uid="uid://cg6sdm1kwud5o" path="res://scenes/kombi.tscn" id="5_ciej0"]
 [ext_resource type="PackedScene" uid="uid://5p60yd2p8fye" path="res://scenes/chao.tscn" id="6_kuh63"]
+[ext_resource type="FontFile" uid="uid://dvgphr601eq8k" path="res://assets/PressStart2P.ttf" id="7_8nhbx"]
 [ext_resource type="AudioStream" uid="uid://itte6ihkam5h" path="res://sounds/Screen_Recording_20241216_170849_YouTube.mp3" id="7_nwknv"]
+[ext_resource type="Texture2D" uid="uid://bqbhapg4vgesg" path="res://assets/heart.png" id="8_kns1o"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_0t5fh")
@@ -43,28 +45,37 @@ offset_left = 40.0
 offset_top = 40.0
 offset_right = 155.0
 offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("7_8nhbx")
 theme_override_font_sizes/font_size = 36
-text = "Score: "
+text = "Score"
 
 [node name="score_counter" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 155.0
-offset_top = 40.0
-offset_right = 270.0
-offset_bottom = 90.0
+offset_left = 58.0
+offset_top = 86.0
+offset_right = 202.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("7_8nhbx")
 theme_override_font_sizes/font_size = 36
 text = "0000"
 
 [node name="life_counter" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1032.0
+offset_left = 1065.0
 offset_top = 40.0
-offset_right = 1147.0
+offset_right = 1180.0
 offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("7_8nhbx")
 theme_override_font_sizes/font_size = 36
 text = "x 3"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Heart" type="Sprite2D" parent="CanvasLayer/Control"]
+texture_filter = 1
+position = Vector2(1021, 69)
+scale = Vector2(4, 4)
+texture = ExtResource("8_kns1o")
 
 [node name="kombi" parent="." instance=ExtResource("5_ciej0")]
 position = Vector2(1200, 600)
