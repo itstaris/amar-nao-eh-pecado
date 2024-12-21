@@ -2,10 +2,7 @@ extends Node2D
 
 @export var box_scene: PackedScene
 
-#tentativa de aumentar a velocidade com que cai as caixas
-var tempo_min = 0.5
-var tempo_max = 3.0
-var tempo = 0.0
+var tempo = 2.0
 
 func new_game():
 	$StartTimer.start()
@@ -16,8 +13,10 @@ func _ready() -> void:
 	new_game()
 
 func _process(delta: float):
-	tempo = lerp(tempo_max, tempo_min, 0.1)
-	#print(tempo)
+	#tempo = lerp(tempo_max, tempo_min, 0.5)
+	print(tempo)
+	adjust_time()
+	print(Global.score)
 
 func _on_start_timer_timeout() -> void:
 	caixa_spawn()
@@ -25,6 +24,18 @@ func _on_start_timer_timeout() -> void:
 func caixa_spawn(): #função que faz cuspir as caixas
 	while true:
 		var box = box_scene.instantiate()
-		box.position = Vector2(randf_range(20, 1180), -40) #mudar isso depois
+		box.position = Vector2(randf_range(32, 1000), -40) #mudar isso depois
 		add_child(box)
 		await get_tree().create_timer(tempo).timeout
+
+func adjust_time():
+	if Global.score >= 5:
+		tempo = 1.5
+	if Global.score >= 10:
+		tempo = 1.0
+	if Global.score >= 25:
+		tempo = 0.7
+	if Global.score >= 40:
+		tempo = 0.5
+	if Global.score >= 65:
+		tempo = 0.3

@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://du205tcwcttfr"]
+[gd_scene load_steps=10 format=3 uid="uid://du205tcwcttfr"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_vnw8g"]
+[ext_resource type="FontFile" uid="uid://dvgphr601eq8k" path="res://assets/PressStart2P.ttf" id="2_0o3x8"]
 [ext_resource type="Theme" uid="uid://djjyjcwvpshfp" path="res://font_themes/new_theme.tres" id="2_1lucm"]
+[ext_resource type="Texture2D" uid="uid://x8gy2eu2p8de" path="res://assets/gameover_bg.png" id="2_3vsno"]
 [ext_resource type="StyleBox" uid="uid://q3uws5kh1p40" path="res://font_themes/new_style_box_flat.tres" id="3_2oc3i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj0ls"]
@@ -47,6 +49,11 @@ expand_margin_right = 50.0
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_vnw8g")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(600, 450)
+texture = ExtResource("2_3vsno")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -60,13 +67,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -144.0
-offset_top = 110.0
-offset_right = 144.0
-offset_bottom = 173.0
+offset_left = -265.0
+offset_top = 160.0
+offset_right = 185.0
+offset_bottom = 223.0
 grow_horizontal = 2
+scale = Vector2(1.23, 1.23)
+theme_override_fonts/font = ExtResource("2_0o3x8")
 theme_override_font_sizes/font_size = 45
-text = ":("
+text = "GAME OVER!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -76,10 +85,11 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -144.0
-offset_top = 227.0
+offset_top = 281.0
 offset_right = 144.0
-offset_bottom = 290.0
+offset_bottom = 344.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_0o3x8")
 theme_override_font_sizes/font_size = 45
 text = "Score:"
 horizontal_alignment = 1
@@ -90,11 +100,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -144.0
-offset_top = 314.0
-offset_right = 144.0
-offset_bottom = 377.0
+offset_left = -247.5
+offset_top = 376.0
+offset_right = 247.5
+offset_bottom = 439.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_0o3x8")
 theme_override_font_sizes/font_size = 45
 text = "High Score:"
 horizontal_alignment = 1
@@ -107,13 +118,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -159.0
-offset_top = -15.0
-offset_right = 159.0
-offset_bottom = 84.0
+offset_left = -250.0
+offset_top = 44.0
+offset_right = 250.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_1lucm")
+theme_override_fonts/font = ExtResource("2_0o3x8")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = ExtResource("3_2oc3i")
 theme_override_styles/disabled_mirrored = ExtResource("3_2oc3i")
 theme_override_styles/disabled = ExtResource("3_2oc3i")
@@ -132,13 +145,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -291.0
-offset_right = 81.0
-offset_bottom = -184.0
+offset_left = -100.0
+offset_top = -257.0
+offset_right = 100.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_1lucm")
+theme_override_fonts/font = ExtResource("2_0o3x8")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = ExtResource("3_2oc3i")
 theme_override_styles/hover_pressed_mirrored = ExtResource("3_2oc3i")
 theme_override_styles/hover_pressed = ExtResource("3_2oc3i")
@@ -149,5 +164,5 @@ text = "Menu"
 
 [connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_try_again_button_pressed"]
-[connection signal="pressed" from="Control/MenuButton" to="." method="_on_quit_button_2_pressed"]
 [connection signal="pressed" from="Control/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Control/MenuButton" to="." method="_on_quit_button_2_pressed"]

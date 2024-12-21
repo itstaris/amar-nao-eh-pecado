@@ -1,14 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci47xnkr8nut4"]
+[gd_scene load_steps=11 format=3 uid="uid://ci47xnkr8nut4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gdvei"]
-[ext_resource type="Texture2D" uid="uid://4se20seou04a" path="res://assets/Untitled-1.webp" id="2_6qooq"]
-[ext_resource type="Texture2D" uid="uid://dhybmh4odk1vx" path="res://assets/Untitled-3.webp" id="3_wa5jy"]
+[ext_resource type="Texture2D" uid="uid://bqas6vc3sene" path="res://assets/1_caixa_test.png" id="2_bs3ds"]
+[ext_resource type="Texture2D" uid="uid://cmf5x3wx3qjch" path="res://assets/2_caixa_test.png" id="3_23gwr"]
+[ext_resource type="Texture2D" uid="uid://dye7nxjk5hg1a" path="res://assets/idle_test.png" id="3_lb0c0"]
+[ext_resource type="Texture2D" uid="uid://qfn8m1ddjpv3" path="res://assets/3_caixa_test.png" id="4_jal40"]
+[ext_resource type="Texture2D" uid="uid://18yxjtaleu83" path="res://assets/4_caixa_test.png" id="5_upag6"]
+[ext_resource type="Texture2D" uid="uid://sbbntvi8v1pi" path="res://assets/5_caixa_test.png" id="6_66yto"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2loqo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6qooq")
+"texture": ExtResource("2_bs3ds")
 }],
 "loop": true,
 "name": &"1_caixa",
@@ -16,7 +20,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_wa5jy")
+"texture": ExtResource("3_23gwr")
+}],
+"loop": true,
+"name": &"2_caixa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jal40")
+}],
+"loop": true,
+"name": &"3_caixa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_upag6")
+}],
+"loop": true,
+"name": &"4_caixa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_66yto")
+}],
+"loop": true,
+"name": &"5_caixa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lb0c0")
 }],
 "loop": true,
 "name": &"Idle",
@@ -33,10 +69,12 @@ size = Vector2(128, 128)
 script = ExtResource("1_gdvei")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 64)
+texture_filter = 1
+position = Vector2(-64, -288)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_2loqo")
 animation = &"Idle"
+centered = false
 offset = Vector2(0, -24)
 
 [node name="Area2D_0" type="Area2D" parent="." groups=["player"]]
