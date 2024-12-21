@@ -162,7 +162,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3un74")
 theme_override_styles/normal = ExtResource("3_2oc3i")
 text = "Menu"
 
-[connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="Control/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Control/MenuButton" to="." method="_on_quit_button_2_pressed"]
